@@ -1,0 +1,48 @@
+﻿@model BRTS.Web.Models.Account
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header"><h2>Sign Up</h2></div>
+                <div class="card-body">
+                    <form method="post" action="SignUpRequest">
+                        <div class="form-group">
+                            <label asp-for="Name">firstName</label>
+                            <input asp-for="Name" name="firstName" class="form-control" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="lastName">lastName</label>
+                            <input asp-for="lastName" name="lastName" class="form-control" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PhoneNumber">Phone Number</label>
+                            <input asp-for="PhoneNumber" name="phoneNumber" class="form-control" placeholder="Enter your phone number">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password">Password</label>
+                            <input asp-for="Password" name="password" c lass="form-control" placeholder="Enter your password">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="userName">userName</label>
+                            <input asp-for="userName" name="userName" class="form-control" placeholder="Enter your username">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Gender">Gender</label>
+                            <input asp-for="Gender" name="gender" class="form-control" placeholder="Enter your gender" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Gender">Role</label>
+                            <input asp-for="Gender" name="Role" class="form-control" placeholder="Enter your Role" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="emailAddress">emailAddress</label>
+                            <input asp-for="emailAddress" name="emailAddress" class="form-control" placeholder="Enter your emailAddress" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
