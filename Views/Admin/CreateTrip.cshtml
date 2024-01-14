@@ -1,49 +1,108 @@
 ﻿@model List<BRTS.Web.Models.Bus>
- 
+
 @{
     ViewData["Title"] = "CreateTrip";
 }
 <h1>CreateTrip DashBoard</h1>
-<div style="margin:100px">
-<form class="form-contact" action="AddNewTripRequest" method="post" enctype="multipart/form-data">
-    <div class="row">
-        <div class="col-12">
-            <div class="form-group">
-                <input class="form-control" name="TripName" id="TripName" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="TripName">
-            </div>
-        </div>
+
+
+<style>
+   
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        border: 5px solid #3498db;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #f0f0f0;
+    }
+
+    
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #333333;
+    }
+
+    
+    input {
+        border: 2px solid #3498db;
+        border-radius: 5px;
+        padding: 10px;
+        width: 80%;
+    }
+
+    
+    label {
+        display: block;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    
+    button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        cursor: pointer;
+        font-size: 1.2em;
+    }
+
+        button:hover {
+            background-color: #2e7d32;
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+</style>
+
+<div class="container">
+    <form class="form-contact" action="AddNewTripRequest" method="post" enctype="multipart/form-data">
+        <div class="row">
             <div class="col-12">
                 <div class="form-group">
+                    <label for="TripName">Trip Name</label>
+                    <input class="form-control" name="TripName" id="TripName" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="TripName">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="BusId">Bus Id</label>
                     <input class="form-control" name="BusId" id="BusId" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'BusId'" placeholder="BusId">
                 </div>
             </div>
-        
-        <div class="col-12">
-            <div class="form-group">
-                <input class="form-control" name="TripGoingFrom" id="TripGoingFrom" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="TripGoingFrom">
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-group">
-                <input class="form-control" name="TripDestination" id="TripDestination" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="TripDestination">
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-group">
-                <input class="form-control" name="StartDateAndTime" id="StartDateAndTime" type="datetime-local" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="StartDateAndTime">
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-group">
-                <input class="form-control" name="EndDateAndTime" id="EndDateAndTime" type="datetime-local" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="EndDateAndTime">
-            </div>
-        </div>
-        
 
-    </div>
-    <div>
-        <button style="margin:10px;" type="submit" class="btn slider-btn " data-animation="bounceIn" data-delay="1s"> Add New Trip</button>
-    </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="TripGoingFrom">Trip Going From</label>
+                    <input class="form-control" name="TripGoingFrom" id="TripGoingFrom" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="TripGoingFrom">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="TripDestination">Trip Destination</label>
+                    <input class="form-control" name="TripDestination" id="TripDestination" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="TripDestination">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="StartDateAndTime">Start Date And Time</label>
+                    <input class="form-control" name="StartDateAndTime" id="StartDateAndTime" type="datetime-local" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="StartDateAndTime">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="EndDateAndTime">End Date And Time</label>
+                    <input class="form-control" name="EndDateAndTime" id="EndDateAndTime" type="datetime-local" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="EndDateAndTime">
+                </div>
+            </div>
 
-</form>
+
+        </div>
+        <div>
+            <button style="margin:10px;" type="submit" class="btn slider-btn " data-animation="bounceIn" data-delay="1s"> Add New Trip</button>
+        </div>
+
+    </form>
 </div>

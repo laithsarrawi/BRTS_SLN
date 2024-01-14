@@ -1,34 +1,94 @@
 ﻿@{
     ViewData["Title"] = "AddNewBus";
 }
-<form class="form-contact" action="AddNewBusRequest" method="post" enctype="multipart/form-data">
-    <div class="row">
-        
-        <div class="col-12">
-            <div class="form-group">
-                <input class="form-control" name="TripId" id="TripId" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="TripId">
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-group">
-                <input class="form-control" name="Captin_Id" id="Captin_Id" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Captin_Id">
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-group">
-                <input class="form-control" name="TotalSeats" id="TotalSeats" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="TotalSeats">
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-group">
-                <input class="form-control" name="AvailabelSeats" id="AvailabelSeats" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="AvailabelSeats">
-            </div>
-        </div>
-       
 
-    </div>
-    <div>
-        <button style="margin:10px;" type="submit" class="btn slider-btn " data-animation="bounceIn" data-delay="1s">Add New Bus</button>
-    </div>
+<!-- Add a style tag to define the CSS rules -->
+<style>
+    /* Container */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        border: 5px solid #3498db;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #f0f0f0;
+    }
 
-</form>
+    /* Headings */
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #333333;
+    }
+
+    /* Inputs */
+    input {
+        border: 2px solid #3498db;
+        border-radius: 5px;
+        padding: 10px;
+        width: 80%;
+    }
+
+    /* Labels */
+    label {
+        display: block;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+    /* Buttons */
+    button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        cursor: pointer;
+        font-size: 1.2em;
+    }
+
+        button:hover {
+            background-color: #2e7d32;
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+</style>
+
+<div class="container">
+    <h1>Add New Bus</h1>
+    <form class="form-contact" action="AddNewBusRequest" method="post" enctype="multipart/form-data">
+        <div class="row">
+
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="TripId">Trip Id</label>
+                    <input class="form-control" name="TripId" id="TripId" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="TripId">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="Captin_Id">Captain Id</label>
+                    <input class="form-control" name="Captin_Id" id="Captin_Id" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Captin_Id">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="TotalSeats">Total Seats</label>
+                    <input class="form-control" name="TotalSeats" id="TotalSeats" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="TotalSeats">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="AvailabelSeats">Available Seats</label>
+                    <input class="form-control" name="AvailabelSeats" id="AvailabelSeats" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="AvailabelSeats">
+                </div>
+            </div>
+
+
+        </div>
+        <div>
+            <button style="margin:10px;" type="submit" class="btn slider-btn " data-animation="bounceIn" data-delay="1s">Add New Bus</button>
+        </div>
+
+    </form>
+</div>

@@ -1,4 +1,4 @@
-﻿@model BRTS.Web.Models.DashBoardViewModel    
+﻿@model BRTS.Web.Models.DashBoardViewModel
 @{
     ViewData["Title"] = "CustomerDashBoard";
 
@@ -6,11 +6,16 @@
 
 <h1>CustomerDashBoard</h1>
 
+<!-- Add a style tag to define the CSS rules -->
 <style>
     /* Container */
-
-    
-    border-radius: 5px;
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        border: 5px solid #3498db;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #f0f0f0;
     }
 
     /* Headings */
@@ -18,6 +23,7 @@
         font-size: 2em;
         margin-bottom: 20px;
         text-align: center;
+        color: #333333;
     }
 
     /* Tables */
@@ -47,59 +53,80 @@
         background-color: #e5f5ff;
     }
 
+    /* Buttons */
+    input[type=submit] {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #2e7d32;
+            transform: scale(1.1);
+            transition: all 0.3s;
+        }
+
+    /* Captions */
+    caption {
+        font-size: xx-large;
+        font-weight: bold;
+        margin: 10px;
+    }
 </style>
 
-<div style="margin:100px">
-<h1 style="font-size: xx-large; text-align: center; margin:30px ">Customer DashBoard</h1>
+<div class="container">
+    <h1>Customer DashBoard</h1>
 
-<br />
-<table>
-    <caption style="font-size:xx-large">Trips List</caption>
-    <thead>
-        <tr>
-            <th>TripId</th>
-            <th>TripGoingFrom</th>
-            <th>TripDestination</th>
-            <th>StartDateAndTime</th>
-            <th>EndDateAndTime</th>
-            <th>TripName</th>
-            <th>Book A Trip</th>
-
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var trip in Model.trips)
-        {
-            <script>
-                var h = @trip.TripId 
-            </script>
+    <br />
+    <table>
+        <caption>Trips List</caption>
+        <thead>
             <tr>
-                <td>@trip.TripId</td> 
-                <td>@trip.TripGoingFrom</td>
-                <td>@trip.TripDestination</td>
-                <td>@trip.StartDateAndTime</td>
-                <td>@trip.EndDateAndTime</td>
-                <td>@trip.TripName</td>
-                <td> 
-                    <form action="/Customer/BookAtrip" method="post">
+                <th>TripId</th>
+                <th>TripGoingFrom</th>
+                <th>TripDestination</th>
+                <th>StartDateAndTime</th>
+                <th>EndDateAndTime</th>
+                <th>TripName</th>
+                <th>Book A Trip</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var trip in Model.trips)
+            {
+                <script>
+                    var h = @trip.TripId
+                </script>
+                <tr>
+                    <td>@trip.TripId</td>
+                    <td>@trip.TripGoingFrom</td>
+                    <td>@trip.TripDestination</td>
+                    <td>@trip.StartDateAndTime</td>
+                    <td>@trip.EndDateAndTime</td>
+                    <td>@trip.TripName</td>
+                    <td>
+                        <form action="/Customer/BookAtrip" method="post">
                             <input type="hidden" name="TripId" value="@trip.TripId" />
                             <input type="hidden" name="id" value="@Model.id" />
                             <input type="submit" value="Book A Ticket">
 
-                    </form>
-                </td>
-            </tr>
-            
-
-        }
-    </tbody>
+                        </form>
+                    </td>
+                </tr>
 
 
+            }
+        </tbody>
 
-</table>
-<br />
+
+
+    </table>
+    <br />
     <table>
-        <caption style="font-size:xx-large">Booked Trips</caption>
+        <caption>Booked Trips</caption>
         <thead>
             <tr>
                 <th>TripId</th>
@@ -115,7 +142,7 @@
         <tbody>
             @foreach (var trip in Model.bookedTrips)
             {
-                
+
                 <tr>
                     <td>@trip.TripId</td>
                     <td>@trip.TripGoingFrom</td>
@@ -131,12 +158,12 @@
 
                         </form>
                     </td>
-                    
+
                 </tr>
 
 
             }
-            
+
         </tbody>
 
 
