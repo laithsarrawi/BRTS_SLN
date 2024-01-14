@@ -5,6 +5,9 @@ namespace BRTS.Web.Models
     public class Account
     {
         [Key]
+
+
+
         public int accountId { get; set; }
 
         [Required(ErrorMessage = "Please enter your first name.")]
